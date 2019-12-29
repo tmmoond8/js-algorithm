@@ -16,7 +16,6 @@ var twoSum = function(nums, target) {
       if (nums[i] + nums[j] === target) return [i, j];
     }
   }
-  return [0, 1];
 };
 
 console.log([0, 1].toString() === twoSum([2, 7, 11, 15], 9).toString())
