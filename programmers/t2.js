@@ -1,13 +1,11 @@
 function solution(v) {
   const candidate = getPermutations(v);
-  var answer = 0;
-  candidate.forEach((arr) => {
-    answer = Math.max(answer, sumDifference(arr));
-  });
+  var answer = candidate.reduce((accum, arr) => {
+    accum = Math.max(accum, sumDifference(arr));
+    return accum;
+  }, 0);
   return answer;
 }
-
-console.log(solution([20, 8, 10, 1, 4, 15]) === 62);
 
 function sumDifference(arr) {
   let sum = 0;
